@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bmrueemtmi8mx"]
+
+[ext_resource type="Script" uid="uid://dgy337qfvvqcl" path="res://script/character_body_2d.gd" id="1_cibmi"]
+[ext_resource type="Texture2D" uid="uid://c4m8mvlugotgd" path="res://icon.svg" id="2_emr73"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lenm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_emr73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emr73"]
+size = Vector2(35.75, 36.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lenm3"]
+size = Vector2(282.54297, 154.96875)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bo5gj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_emr73")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="game" type="Node2D" unique_id=687961256]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1072605361]
+position = Vector2(-2, 1)
+script = ExtResource("1_cibmi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1229799880]
+position = Vector2(27.999992, 23.25)
+scale = Vector2(0.34374988, 0.31640625)
+sprite_frames = SubResource("SpriteFrames_lenm3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1389552027]
+z_index = -2
+position = Vector2(25.999992, 24.25)
+shape = SubResource("RectangleShape2D_emr73")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1909163923]
+position = Vector2(-9, -425)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=322309926]
+position = Vector2(114, 637)
+shape = SubResource("RectangleShape2D_lenm3")
+debug_color = Color(1.2513996e-06, 0.62878144, 0.4921438, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=773592850]
+position = Vector2(-5, 3.9999967)
+scale = Vector2(2.1562498, 1.2382813)
+sprite_frames = SubResource("SpriteFrames_bo5gj")
