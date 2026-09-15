@@ -1,5 +1,5 @@
 # 🎮 Primeiro Jogo com Godot
-<p align="center"> <img src="https://img.shields.io/badge/Godot-4.x-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" alt="Godot Engine"> <img src="https://img.shields.io/badge/GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" alt="GDScript"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"> <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge" alt="Status"> </p> <p align="center"> <strong>Meu primeiro projeto de desenvolvimento de jogos utilizando a Godot Engine.</strong> </p>
+<p align="center"> <img src="https://img.shields.io/badge/Godot-4.7-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" alt="Godot Engine"> <img src="https://img.shields.io/badge/GDScript-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white" alt="GDScript"> <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git"> <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=for-the-badge" alt="Status"> </p> <p align="center"> <strong>Meu primeiro projeto de desenvolvimento de jogos utilizando a Godot Engine.</strong> </p>
 
 ## 📖 Sobre o projeto
 
