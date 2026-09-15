@@ -33,7 +33,7 @@ Aula 01 — Instalando a Engine e Preparando o Projeto
 
 ## 🎬 Assistir ao tutorial no YouTube
 
-Canal: Rafael Forbeck | Game Dev
+### Canal: Rafael Forbeck | Game Dev
 
 O tutorial está sendo utilizado como material de estudo para compreender os fundamentos da Godot e do desenvolvimento de jogos.
 
@@ -167,7 +167,7 @@ O desenvolvimento será dividido em algumas etapas.
 ## ▶️ Como executar o projeto
 Requisitos
 
-Godot Engine 4.8
+Godot Engine 4.7
 
 Git
 
