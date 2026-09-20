@@ -29,6 +29,8 @@ project/assembly_name="Meu jogo"
 [global_group]
 
 Player=""
+Enemis=""
+LethalArea=""
 
 [input]
 

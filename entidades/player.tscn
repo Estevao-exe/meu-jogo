@@ -2,11 +2,23 @@
 
 [ext_resource type="Script" uid="uid://cr4jvtbg4mr60" path="res://script/player.gd" id="1_opfg8"]
 [ext_resource type="Texture2D" uid="uid://ck5bte2y06q4q" path="res://sprites/Sprite/1 - Penguin/Ducking (16 x 16).png" id="2_2qu0p"]
+[ext_resource type="Texture2D" uid="uid://c3viw751axvi7" path="res://sprites/Sprite/1 - Penguin/Hurt (16 x 16).png" id="2_wlwsy"]
 [ext_resource type="Texture2D" uid="uid://1iloma1yao6m" path="res://sprites/Sprite/1 - Penguin/Falling (16 x 16).png" id="3_2qu0p"]
 [ext_resource type="Texture2D" uid="uid://bxxsbjilht8vg" path="res://sprites/Sprite/1 - Penguin/Idle (16 x 16).png" id="3_7y4ih"]
+[ext_resource type="Texture2D" uid="uid://ck04crci5nxb2" path="res://sprites/Sprite/1 - Penguin/Lying_On_Ground (16 x 16).png" id="3_rcte5"]
 [ext_resource type="Texture2D" uid="uid://4o2b2gyvcecj" path="res://sprites/Sprite/1 - Penguin/Jump (16 x 16).png" id="4_r4ns2"]
 [ext_resource type="Texture2D" uid="uid://vh8ccwt6ec2e" path="res://sprites/Sprite/1 - Penguin/Waddling (16 x 16).png" id="5_s8mye"]
 [ext_resource type="Texture2D" uid="uid://foiky50nt3ku" path="res://sprites/Sprite/1 - Penguin/Belly_Sliding (16 x 16).png" id="6_7y4ih"]
+[ext_resource type="Texture2D" uid="uid://bin0u423bqely" path="res://sprites/Sprite/1 - Penguin/Wall_Grab (16x16).png" id="10_1wo38"]
+[ext_resource type="Texture2D" uid="uid://b58kf2j6i7i4s" path="res://sprites/Sprite/1 - Penguin/Wall_Slide (16x16).png" id="11_l7jkh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0nbo"]
+atlas = ExtResource("2_wlwsy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k7ag"]
+atlas = ExtResource("3_rcte5")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kd8fs"]
 atlas = ExtResource("2_2qu0p")
@@ -76,13 +88,40 @@ region = Rect2(64, 0, 16, 16)
 atlas = ExtResource("5_s8mye")
 region = Rect2(80, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrqjl"]
+atlas = ExtResource("11_l7jkh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcewq"]
+atlas = ExtResource("11_l7jkh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg13l"]
+atlas = ExtResource("11_l7jkh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu2lu"]
+atlas = ExtResource("11_l7jkh")
+region = Rect2(48, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_l66pl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_l0nbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k7ag")
+}],
+"loop": 0,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kd8fs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"duck",
 "speed": 5.0
 }, {
@@ -90,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7y4ih")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -110,7 +149,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kq7hh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 10.0
 }, {
@@ -118,7 +157,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1bqy4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -132,7 +171,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l66pl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"slide",
 "speed": 5.0
 }, {
@@ -155,14 +194,37 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o1dl2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1wo38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrqjl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcewq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg13l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iu2lu")
+}],
+"loop": 0,
+"name": &"wall",
 "speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l0nbo"]
 radius = 6.0
 height = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvng1"]
+size = Vector2(12.75, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=518126683 groups=["Player"]]
 collision_layer = 2
@@ -172,8 +234,24 @@ script = ExtResource("1_opfg8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=356822828]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_l66pl")
-animation = &"slide"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607875882]
-z_index = -1
 shape = SubResource("CapsuleShape2D_l0nbo")
+
+[node name="ReloadTimer" type="Timer" parent="." unique_id=1507774211]
+
+[node name="LeftWallDetector" type="RayCast2D" parent="." unique_id=208879801]
+
+[node name="RightWallDetecor" type="RayCast2D" parent="." unique_id=364411062]
+
+[node name="HitBox" type="Area2D" parent="." unique_id=949605358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=489798958]
+shape = SubResource("RectangleShape2D_pvng1")
+debug_color = Color(0.7647059, 0, 0, 0.5411765)
+
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
