@@ -263,7 +263,7 @@ func set_larde_collider():
 	collision_shape.shape.height = 16
 	collision_shape.position.y = 0
 	
-	hitbox_collision_shape.shape.size = 15
+	hitbox_collision_shape.shape.size.y = 15
 	hitbox_collision_shape.position.y = 0.5
 
 

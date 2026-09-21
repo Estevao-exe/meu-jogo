@@ -227,26 +227,31 @@ height = 16.0
 size = Vector2(12.75, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=518126683 groups=["Player"]]
+z_index = 1
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_opfg8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=356822828]
-z_index = 1
 sprite_frames = SubResource("SpriteFrames_l66pl")
-animation = &"idle"
+animation = &"wall"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=607875882]
 shape = SubResource("CapsuleShape2D_l0nbo")
 
 [node name="ReloadTimer" type="Timer" parent="." unique_id=1507774211]
+one_shot = true
 
 [node name="LeftWallDetector" type="RayCast2D" parent="." unique_id=208879801]
+target_position = Vector2(-8, 0)
 
 [node name="RightWallDetecor" type="RayCast2D" parent="." unique_id=364411062]
+target_position = Vector2(8, 0)
 
 [node name="HitBox" type="Area2D" parent="." unique_id=949605358]
+collision_layer = 2
+collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=489798958]
 shape = SubResource("RectangleShape2D_pvng1")

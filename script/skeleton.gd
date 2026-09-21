@@ -9,11 +9,12 @@ enum SkeletonState {
 const SPINNING_BONE = preload("res://entidades/spinning_bone.tscn")
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
-@onready var hitbox: Area2D = $Hitbox
+@onready var hitbox: Area2D = $HitBox
 @onready var wall_detector: RayCast2D = $WallDetector
-@onready var ground_detector: RayCast2D = $GroundDetector
+@onready var ground_detector: RayCast2D = $GroudDetector
 @onready var player_detector: RayCast2D = $PlayerDetector
-@onready var bone_start_position: Node2D = $BoneStartPosition
+@onready var bone_start_position: Node2D = $BoneStarPosition
+
 
 const SPEED = 7.0
 const JUMP_VELOCITY = -400.0
@@ -53,7 +54,7 @@ func go_to_attack_state():
 	
 func go_to_hurt_state():
 	status = SkeletonState.hurt
-	anim.play("hurt")
+	anim.play("death")
 	hitbox.process_mode = Node.PROCESS_MODE_DISABLED
 	velocity = Vector2.ZERO
 	
@@ -91,3 +92,9 @@ func throw_bone():
 	add_sibling(new_bone)
 	new_bone.position = bone_start_position.global_position
 	new_bone.set_direction(self.direction)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if anim.animation == "attack":
+		go_to_walk_state()
+		return
